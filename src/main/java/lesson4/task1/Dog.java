@@ -29,14 +29,14 @@ public class Dog extends Animal {
     public void run(int distance) {
         if (distance <= RUN_DISTANCE && distance > 0) {
             System.out.println("Dog " + name + " runs " + distance + " meters");
-        }
+        } else System.out.println("Dog " + name + " can't run " + distance + " meters");
     }
 
     @Override
     public void swim(int distance) {
         if (distance <= SWIM_DISTANCE && distance > 0) {
             System.out.println("Dog " + name + " swims " + distance + " meters");
-        }
+        } else System.out.println("Dog " + name + " can't swim " + distance + " meters");
     }
 
     public void eat(Bowl bowl) {

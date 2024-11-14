@@ -38,7 +38,7 @@ public class Cat extends Animal {
     public void run(int distance) {
         if (distance <= RUN_DISTANCE && distance > 0) {
             System.out.println("Cat " + name + " runs " + distance + " meters");
-        }
+        } else System.out.println("Cat " + name + " can't run " + distance + " meters");
     }
 
     @Override
