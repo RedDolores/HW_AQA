@@ -10,7 +10,7 @@ public class Main {
         Matrix matrix = new Matrix();
 
         try {
-            matrix.sumAllElements(matrix2);
+            System.out.println("Сумма всех эллементов матрицы: " + matrix.sumAllElements(matrix4));
         } catch (MyArraySizeException | MyArrayDataException e) {
             e.printStackTrace();
         }

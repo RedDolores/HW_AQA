@@ -1,20 +1,14 @@
 package lesson5;
 
 public class Matrix {
-    public String tempElementMatrix;
-    public int tempI;
-    public int tempJ;
+    private String tempElementMatrix;
+    private int tempI;
+    private int tempJ;
 
-    public void sumAllElements(String[][] matrix) throws MyArraySizeException, MyArrayDataException {
-        int size = 4;
+    public int sumAllElements(String[][] matrix) throws MyArraySizeException, MyArrayDataException {
         int sum = 0;
-        if (matrix.length != size) {
-            throw new MyArraySizeException("Введено строк:", matrix.length, size);
-        }
-        for (int i = 0; i < matrix.length; i++) {
-            if (matrix[i].length != size)
-                throw new MyArraySizeException("В строке " + i + " введено столбцов:", matrix[i].length, size);
-        }
+
+        checkSizeMatrix(matrix);
 
         try {
             for (int i = 0; i < matrix.length; i++) {
@@ -25,10 +19,23 @@ public class Matrix {
                     sum += Integer.parseInt(matrix[i][j]);
                 }
             }
-            System.out.println("Сумма всех эллементов матрицы: " + sum);
+            return sum;
         } catch (NumberFormatException e) {
             throw new MyArrayDataException(this.tempElementMatrix, this.tempI, this.tempJ);
         }
 
     }
+
+    private void checkSizeMatrix(String[][] matrix) throws MyArraySizeException {
+        int size = 4;
+        if (matrix.length != size) {
+            throw new MyArraySizeException("Введено строк:", matrix.length, size);
+        }
+        for (int i = 0; i < matrix.length; i++) {
+            if (matrix[i].length != size)
+                throw new MyArraySizeException("В строке " + i + " введено столбцов:", matrix[i].length, size);
+        }
+
+    }
+
 }
