@@ -21,20 +21,16 @@ public class Main {
         System.out.println(wordsSetList);
 
         HashMap<String, Integer> countWords = new HashMap<>();
-        for(String item : wordsList) {
+        for (String item : wordsList) {
             countWords.put(item, countWords.getOrDefault(item, 0) + 1);
         }
-        for(Map.Entry<String, Integer> o : countWords.entrySet()){
+        for (Map.Entry<String, Integer> o : countWords.entrySet()) {
             System.out.println(o.getKey() + ": " + o.getValue());
         }
         // end Task 1
 
         AppPhonebook appPhonebook = new AppPhonebook();
         appPhonebook.start();
-
-
-
-
 
 
     }

@@ -3,10 +3,8 @@ package lesson6;
 import java.util.*;
 
 public class Phonebook {
-    private Map<String, List<String>> phonebook = new HashMap<>();
+    private Map<String, List<String>> phonebook;
 
-    public Phonebook(){
-    }
     public Phonebook(Map<String, List<String>> phonebook) {
         this.phonebook = phonebook;
     }
