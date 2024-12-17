@@ -25,8 +25,8 @@ public class MtsPayFormTest {
     void setupTest() {
         driver = new ChromeDriver();
         driver.get("https://www.mts.by");
-        if (driver.findElement(By.xpath("//button[contains(text(), 'Отклонить')]")).isDisplayed()) {
-            driver.findElement(By.xpath("//button[contains(text(), 'Отклонить')]")).click();
+        if (driver.findElement(By.xpath("//button[contains(text(), 'РћС‚РєР»РѕРЅРёС‚СЊ')]")).isDisplayed()) {
+            driver.findElement(By.xpath("//button[contains(text(), 'РћС‚РєР»РѕРЅРёС‚СЊ')]")).click();
         }
     }
 
@@ -38,7 +38,7 @@ public class MtsPayFormTest {
     @Test
     void testTitle() {
         WebElement title = driver.findElement(By.xpath("//div[@class = 'pay__wrapper']/h2"));
-        String txt = "Онлайн пополнение\nбез комиссии";
+        String txt = "РћРЅР»Р°Р№РЅ РїРѕРїРѕР»РЅРµРЅРёРµ\nР±РµР· РєРѕРјРёСЃСЃРёРё";
         assertEquals(txt, title.getText());
     }
 
@@ -68,13 +68,13 @@ public class MtsPayFormTest {
 
     @Test
     void testIconBelcart() {
-        WebElement icon = driver.findElement(By.xpath("//div[@class = 'pay__partners']//img[@alt = 'Белкарт']"));
+        WebElement icon = driver.findElement(By.xpath("//div[@class = 'pay__partners']//img[@alt = 'Р‘РµР»РєР°СЂС‚']"));
         assertEquals("https://www.mts.by/local/templates/new_design/assets/html/images/pages/index/pay/belkart.svg", icon.getAttribute("src"));
     }
 
     @Test
     void testMoreInfo() {
-        WebElement link = driver.findElement(By.xpath("//div[@class = 'pay__wrapper']/a[text() = 'Подробнее о сервисе']"));
+        WebElement link = driver.findElement(By.xpath("//div[@class = 'pay__wrapper']/a[text() = 'РџРѕРґСЂРѕР±РЅРµРµ Рѕ СЃРµСЂРІРёСЃРµ']"));
         link.click();
         assertTrue(driver.getCurrentUrl().contains("https://www.mts.by/help/poryadok-oplaty-i-bezopasnost-internet-platezhey/"));
     }
@@ -83,7 +83,7 @@ public class MtsPayFormTest {
     void testPayFormConnection() {
         String testPhoneNumber = "297777777";
         driver.findElement(By.xpath("//div[@class = 'select__wrapper']")).click();
-        driver.findElement(By.xpath("//li[contains(. , 'Услуги связи')]")).click();
+        driver.findElement(By.xpath("//li[contains(. , 'РЈСЃР»СѓРіРё СЃРІСЏР·Рё')]")).click();
 
         WebElement inputPhone = driver.findElement(By.xpath("//input[@id = 'connection-phone']"));
         inputPhone.click();
